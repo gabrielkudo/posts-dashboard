@@ -31,6 +31,7 @@ export const nextAuthOptions: NextAuthOptions = {
 
         try {
           console.log('sending login request to trpc: ', email, password)
+          setToken(null)
           const result = await serverClient.login.mutate({ email, password })
 
           if (result) {
@@ -70,7 +71,9 @@ export const nextAuthOptions: NextAuthOptions = {
     async session({ session, token }) {
       const user = token.user as any
       try {
-        setToken(user.jwt)
+        if (user.jwt !== 'debugging vercel') {
+          setToken(user.jwt)
+        }
         const result = await serverClient.me.query()
         if (!result) {
           throw new Error('invalid user')

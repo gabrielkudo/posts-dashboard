@@ -10,9 +10,9 @@ function getBaseUrl() {
   return ''
 }
 
-let token: string
+let token: string | null
 
-export function setToken(newToken: string) {
+export function setToken(newToken: string | null) {
   token = newToken
 }
 
@@ -22,9 +22,13 @@ export const serverClient = createTRPCClient<AppRouter>({
       url: getBaseUrl() + '/api/trpc',
       headers() {
         console.log('sending the token')
-        return {
-          Authorization: token,
+        if (token) {
+          return {
+            Authorization: token,
+          }
         }
+
+        return {}
       },
     }),
   ],
