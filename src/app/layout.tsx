@@ -1,5 +1,5 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
 import AppLayout from '@/components/AppLayout'
@@ -9,11 +9,6 @@ import { SnackbarMessageProvider } from '@/providers/SnackbarMessageProvider'
 export const metadata: Metadata = {
   title: 'Wealth test - Home',
   description: 'Test application to manage posts with authenticated access',
-}
-
-export const viewPort: Viewport = {
-  initialScale: 1,
-  width: 'device-width',
 }
 
 export default function RootLayout({
