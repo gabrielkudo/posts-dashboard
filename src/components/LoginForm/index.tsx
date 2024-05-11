@@ -40,10 +40,10 @@ export default function LoginForm() {
     setShowPassword(!showPassword)
   }
 
-  async function handleSignIn({ email, password }: any): Promise<void> {
+  async function handleSignIn({ email, password }: LoginInputData): Promise<void> {
     const result = await signIn(PasswordCredentialProvider, {
       redirect: false,
-      email,
+      email: email.toLowerCase(),
       password,
     })
 
@@ -99,7 +99,7 @@ export default function LoginForm() {
             <TextField
               fullWidth
               label="Email"
-              type="text"
+              type="email"
               variant="outlined"
               size="small"
               error={!!errors?.email}
