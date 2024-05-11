@@ -64,9 +64,7 @@ export const nextAuthOptions: NextAuthOptions = {
     async session({ session, token }) {
       const user = token.user as any
       try {
-        if (user.jwt !== 'debugging vercel') {
-          setToken(user.jwt)
-        }
+        setToken(user.jwt)
         const result = await serverClient.me.query()
         if (!result) {
           throw new Error('invalid user')
