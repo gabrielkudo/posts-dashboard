@@ -21,7 +21,6 @@ export const serverClient = createTRPCClient<AppRouter>({
     httpBatchLink({
       url: getBaseUrl() + '/api/trpc',
       headers() {
-        console.log('sending the token')
         if (token) {
           return {
             Authorization: token,

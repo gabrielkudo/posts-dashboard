@@ -30,7 +30,6 @@ export const nextAuthOptions: NextAuthOptions = {
         await delay(200)
 
         try {
-          console.log('sending login request to trpc: ', email, password)
           setToken(null)
           const result = await serverClient.login.mutate({ email, password })
 
@@ -44,12 +43,6 @@ export const nextAuthOptions: NextAuthOptions = {
           }
         } catch (err) {
           console.log('err calling trpc: ', err)
-          return {
-            id: '1',
-            email,
-            name: 'debugging vercel',
-            jwt: 'debugging vercel',
-          }
         }
 
         return null

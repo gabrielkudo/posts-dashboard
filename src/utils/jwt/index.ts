@@ -26,7 +26,7 @@ export class JWTGateway {
     if (!secret) {
       throw new Error('You must add the jwt secret in the environment')
     }
-    console.log('JWT Gateway - decoding token: ', token)
+
     return verify(token, secret) as DecodeOutput<T>
   }
 }

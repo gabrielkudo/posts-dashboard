@@ -5,12 +5,7 @@ import { JWTGateway } from '@/utils/jwt'
 
 export async function createContext({ req }: trpcNext.CreateNextContextOptions) {
   async function getUserFromHeader() {
-    console.log('TRPC server - createContext - getting header from req')
     if (req.headers.authorization) {
-      console.log(
-        'TRPC server - createContext - getting req.headers.authorization: ',
-        req.headers.authorization,
-      )
       const user = await JWTGateway.decode<User>({ token: req.headers.authorization })
       return user
     }
