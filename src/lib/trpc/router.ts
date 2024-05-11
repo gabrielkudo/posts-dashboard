@@ -14,7 +14,9 @@ export const appRouter = router({
     const { email, password } = opts.input
 
     if (email === 'test@test.com' && password === 'test123') {
+      console.log('TRPC server - signing with: ', userData)
       const token = await JWTGateway.sign({ payload: userData })
+      console.log('TRPC server - token: ', token)
       return {
         ...userData,
         token,
