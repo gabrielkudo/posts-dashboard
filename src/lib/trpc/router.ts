@@ -10,6 +10,7 @@ const userData = {
 
 export const appRouter = router({
   login: publicProcedure.input(LoginInputDataValidationSchema).mutation(async (opts) => {
+    console.log('executing login procedure - opts: ', opts)
     const { email, password } = opts.input
 
     if (email === 'test@test.com' && password === 'test123') {

@@ -30,7 +30,7 @@ export const nextAuthOptions: NextAuthOptions = {
         await delay(200)
 
         try {
-          console.log('sending login request to trpc')
+          console.log('sending login request to trpc: ', email, password)
           const result = await serverClient.login.mutate({ email, password })
 
           if (result) {
