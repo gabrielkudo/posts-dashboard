@@ -1,23 +1,10 @@
-import { Typography } from '@mui/material'
-
 import DashboardWrapper from '@/components/DashboardWrapper'
+import LoadingSkeleton from '@/components/LoadingSkeleton'
 
 export default function Loading() {
   return (
     <DashboardWrapper>
-      <Typography
-        variant="h1"
-        sx={{
-          ml: 1,
-          fontFamily: 'monospace',
-          fontWeight: 700,
-          letterSpacing: '.2rem',
-          color: 'inherit',
-          textDecoration: 'none',
-        }}
-      >
-        Loading...
-      </Typography>
+      <LoadingSkeleton></LoadingSkeleton>
     </DashboardWrapper>
   )
 }
