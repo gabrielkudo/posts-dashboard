@@ -1,3 +1,5 @@
+import { Box } from '@mui/material'
+
 import DashboardWrapper from '@/components/DashboardWrapper'
 import PostsGrid from '@/components/PostsGrid'
 import { Post } from '@/domain/entities/Post'
@@ -18,7 +20,9 @@ export default async function Posts() {
 
   return (
     <DashboardWrapper>
-      <PostsGrid posts={posts} />
+      <Box sx={{ display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
+        <PostsGrid posts={posts} />
+      </Box>
     </DashboardWrapper>
   )
 }

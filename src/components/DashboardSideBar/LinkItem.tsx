@@ -20,7 +20,9 @@ export function DashboardSideBarLinkItem({
 
   const handleClick = () => {
     onClick?.()
-    router.push(to)
+    if (to !== pathname) {
+      router.push(to)
+    }
   }
 
   const Icon = icon

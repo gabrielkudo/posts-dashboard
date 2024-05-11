@@ -32,9 +32,9 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
   }
 
   return (
-    <Box>
+    <Box sx={{ overflowX: 'hidden' }}>
       {breadCrumbsList.length > 1 && (
-        <Box sx={{ m: 2, pl: 2 }}>
+        <Box sx={{ m: { xs: 1, sm: 2 }, pl: 2 }}>
           <Breadcrumbs aria-label="breadcrumb">
             {breadCrumbsList.map(({ path, name }) => {
               return currPath !== path ? (
@@ -56,7 +56,11 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
           </Breadcrumbs>
         </Box>
       )}
-      <Box sx={{ m: 4, display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
+      <Box
+        sx={{
+          m: { xs: 2, sm: 4 },
+        }}
+      >
         {children}
       </Box>
     </Box>

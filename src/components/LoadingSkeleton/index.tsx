@@ -4,7 +4,7 @@ export default function LoadingSkeleton() {
   return (
     <Typography
       sx={{
-        typography: { xs: 'h4', sm: 'h3', md: 'h2' },
+        typography: { xs: 'h5', sm: 'h4', md: 'h3' },
         ml: 1,
         fontFamily: 'monospace',
         fontWeight: 700,

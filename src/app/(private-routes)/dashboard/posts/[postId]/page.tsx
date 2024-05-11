@@ -1,3 +1,5 @@
+import { Box } from '@mui/material'
+
 import DashboardWrapper from '@/components/DashboardWrapper'
 import PostView from '@/components/PostView'
 import { CommentData } from '@/domain/entities/Comment'
@@ -29,7 +31,9 @@ export default async function Posts({ params }: { params: { postId: string } }) 
 
   return (
     <DashboardWrapper>
-      <PostView post={post} comments={comments}></PostView>
+      <Box sx={{ display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
+        <PostView post={post} comments={comments}></PostView>
+      </Box>
     </DashboardWrapper>
   )
 }
